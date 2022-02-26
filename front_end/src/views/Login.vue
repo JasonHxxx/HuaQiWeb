@@ -51,7 +51,11 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 import { login } from "@/api/user";
+=======
+ import { login } from "@/api/user";
+>>>>>>> dev
 
 export default {
   name: "Login",

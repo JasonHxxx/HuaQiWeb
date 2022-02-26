@@ -5,7 +5,12 @@ import DefaultLayout from "@/layouts/defaultLayout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
+<<<<<<< HEAD
 import Chart from "@/views/Chart.vue"
+=======
+import Esg from "@/views/Esg";
+
+>>>>>>> dev
 // authentication
 // import { judgeTeacher, judgeStudent } from "@/util/auth";
 
@@ -38,7 +43,20 @@ const routes = [
         name: "Register",
         component: Register
       }
-    ]}
+    ]
+  },
+  {
+    path: "/Esg",
+    name: "Esgintro",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/Esg",
+        name: "Esgintro",
+        component: Esg
+      }
+      ]
+  }
 ];
 
 const router = new VueRouter({

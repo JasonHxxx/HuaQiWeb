@@ -9,11 +9,26 @@
     </div>
     <div class="mt-6 d-flex justify-start" style="width: 70%;margin-left: 15%">
       <InfoItem
-        v-for="(info, i) in infoList"
+        v-for="(info, i) in infoList.slice(0,3)"
         :key="i"
         :title="info.title"
         :description="info.description"
         :pic="info.pic"
+        :path="info"
+      >
+      </InfoItem>
+    </div>
+
+    <v-divider></v-divider>
+
+    <div class="mt-6 d-flex justify-start" style="width: 70%;margin-left: 15%">
+      <InfoItem
+          v-for="(info, i) in infoList.slice(3,6)"
+          :key="i"
+          :title="info.title"
+          :description="info.description"
+          :pic="info.pic"
+          :path="info.path"
       >
       </InfoItem>
     </div>
@@ -37,18 +52,38 @@ export default {
         {
           title: "Foundations of ESG Investing",
           description: "hhhhhhhhhhhhhhhhhhdddddddddddddddddd",
-          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500"
+          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
+          path:"/Esg"
+        },
+        {
+          title: "Foundations of ESG Investing",
+          description: "hhhhhhhhhhhhhhhhhhdddddddddddddddddd",
+          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
+          path:"/Esg"
+        },
+        {
+          title: "Foundations of ESG Investing",
+          description: "hhhhhhhhhhhhhhhhhhdddddddddddddddddd",
+          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
+          path:"/Esg"
+        },
+        {
+          title: "Foundations of ESG Investing",
+          description: "hhhhhhhhhhhhhhhhhhdddddddddddddddddd",
+          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
+          path:"/Esg"
         },
         {
           title: "Foundations of ESG Investing",
           description: "hh222222222222222hdddddddddddddddddd",
           pic: "https://empic.dfcfw.com/760490394338418691/w1080h540/art",
-
+          path:"/Esg"
         },
         {
           title: "Foundations of ESG Investing",
           description: "333333333333333hhdddddddddddddddddd",
-          pic: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fx0.ifengimg.com%2Fucms%2F2020_01%2FF96CBE690E19A583C58354D875665DD2A9F4D1E9_size335_w1270_h634.jpg&refer=http%3A%2F%2Fx0.ifengimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648451846&t=88538f0b5a7c01094f8abfb61918614c"
+          pic: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fx0.ifengimg.com%2Fucms%2F2020_01%2FF96CBE690E19A583C58354D875665DD2A9F4D1E9_size335_w1270_h634.jpg&refer=http%3A%2F%2Fx0.ifengimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648451846&t=88538f0b5a7c01094f8abfb61918614c",
+          path:"/Esg"
         }
       ]
     };
