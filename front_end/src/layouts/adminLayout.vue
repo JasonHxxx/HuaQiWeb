@@ -2,8 +2,8 @@
   <div>
     <v-app-bar color="deep-purple lighten-3" dense dark>
       <v-app-bar-nav-icon @click="direct('/admin')">
-        <v-icon>mdi-home</v-icon></v-app-bar-nav-icon
-      >
+        <v-icon>mdi-home</v-icon>
+      </v-app-bar-nav-icon>
 
       <v-toolbar-title @click="direct('/admin')" class="cursor">
         Course Learning Admin

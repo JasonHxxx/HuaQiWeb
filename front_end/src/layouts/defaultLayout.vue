@@ -1,17 +1,20 @@
 <template>
   <div>
-    <v-app-bar color="cyan darken-3" dense dark>
+    <v-app-bar color="#EEEEEE" dense dark extended extension-height="100">
       <v-app-bar-nav-icon @click="direct('/')">
-        <v-icon>mdi-home</v-icon></v-app-bar-nav-icon
-      >
+        <v-img
+            lazy-src="../assets/logo.png"
+            max-height="50"
+            max-width="50"
+            src="../assets/logo.png"
+        ></v-img>
+      </v-app-bar-nav-icon>
 
-      <v-toolbar-title @click="direct('/')" class="cursor">
-        Course Learning
-      </v-toolbar-title>
+      <v-app-bar-title  @click="direct('/')" c class="cursor">ESG</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
-      <v-btn text @click="direct('/login')">
+      <v-btn text color="#424242" @click="direct('/login')">
         登录/注册
       </v-btn>
     </v-app-bar>
@@ -38,5 +41,6 @@ export default {
 <style scoped>
 .cursor {
   cursor: pointer;
+  color: black;/*改变esg字体的颜色*/
 }
 </style>

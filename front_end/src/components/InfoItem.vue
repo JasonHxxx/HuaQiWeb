@@ -37,6 +37,10 @@ export default {
     pic: {
       type: String,
       default: ""
+    },
+    path:{
+      type: String,
+      default: "/"
     }
   },
   data() {
@@ -45,6 +49,7 @@ export default {
   methods: {
     handleMore() {
       alert("learn more!");
+      this.$router.push('/Esg')
     }
   }
 };
