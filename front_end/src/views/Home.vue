@@ -1,248 +1,64 @@
 <template>
   <div>
-    <v-container class="ma-8 pa-4">
-      <template>
-        <!-- 分类课程 -->
-        <v-card>
-          <v-tabs color="deep-purple accent-4" right v-model="currentTab">
-            <v-tab>初级课程</v-tab>
-            <v-tab>中级课程</v-tab>
-            <v-tab>高级课程</v-tab>
-            <!--滚动页面展示课程-->
-            <v-tab-item v-for="c in [primary, medium, advanced]" :key="c.name">
-              <v-container fluid>
-                <v-row class="ma-4">
-                  <course-item
-                    cols="12"
-                    md="4"
-                    v-for="course in c.list"
-                    :key="course.id"
-                    :courseName="course.name"
-                    :courseId="course.id"
-                    :description="course.intro"
-                    :type="course.type"
-                    :cost="course.cost"
-                    :bought="false"
-                    :manageable="course.manageable"
-                    :course-color="colorList[course.id % colorList.length]"
-                    :hasLogin="false"
-                    :course-likes="course.likes"
-                    @set-like="showDialogLike"
-                    @buy-course="showDialog"
-                  >
-                  </course-item>
-                </v-row>
-                <v-pagination
-                  v-model="c.currentPage"
-                  :length="c.totalPage"
-                  circle
-                ></v-pagination>
-              </v-container>
-            </v-tab-item>
-          </v-tabs>
-        </v-card>
-      </template>
-
-      <!--分割线-->
-      <v-row class="ma-12">
-        <v-divider></v-divider>
-      </v-row>
-
-      <!-- 搜索课程 -->
-      <v-row class="mt-10">
-        <v-col cols="5">
-          <v-text-field
-            v-model="searchText"
-            outlined
-            label="搜索课程"
-            append-icon="mdi-magnify"
-          ></v-text-field>
-        </v-col>
-      </v-row>
-      <v-row>
-        <course-item
-          cols="12"
-          md="4"
-          v-for="course in searchCourse"
-          :key="course.id"
-          :courseName="course.name"
-          :courseId="course.id"
-          :description="course.intro"
-          :type="course.type"
-          :cost="course.cost"
-          :bought="false"
-          :manageable="course.manageable"
-          :course-color="colorList[course.id % colorList.length]"
-          :hasLogin="false"
-          :course-likes="course.likes"
-          @set-like="showDialogLike"
-          @buy-course="showDialog"
-        >
-        </course-item>
-      </v-row>
-      <v-row class="d-flex justify-center">
-        <v-pagination
-          v-model="searchCurrentPage"
-          :length="searchTotalPage"
-          circle
-        ></v-pagination>
-      </v-row>
-    </v-container>
-
-    <!-- 购买结果 -->
-    <v-dialog v-model="dialog" width="500">
-      <v-card>
-        <v-card-title>请先登录</v-card-title>
-
-        <v-card-text>
-          登录后可以学习更多课程哦
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog = false">
-            确认
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-    <!-- 点赞结果 -->
-    <v-dialog v-model="dialog_like" width="500">
-      <v-card>
-        <v-card-title>请先登录</v-card-title>
-
-        <v-card-text>
-          登录后才能点赞哦
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="dialog_like = false">
-            确认
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <div>
+      <el-carousel height="400px">
+        <el-carousel-item v-for="item in picList" :key="item">
+          <el-image :src="item" class="big_img"></el-image>
+        </el-carousel-item>
+      </el-carousel>
+    </div>
+    <div class="mt-6 d-flex justify-start" style="width: 70%;margin-left: 15%">
+      <InfoItem
+        v-for="(info, i) in infoList"
+        :key="i"
+        :title="info.title"
+        :description="info.description"
+        :pic="info.pic"
+      >
+      </InfoItem>
+    </div>
   </div>
 </template>
-
 <script>
-import CourseItem from "@/components/CourseItem.vue";
-import { getCoursesByType, getCoursesByKey } from "@/api/course";
-
+import InfoItem from "@/components/InfoItem.vue";
 export default {
-  name: "Home",
+  name: "first",
   components: {
-    CourseItem
+    InfoItem
   },
   data() {
     return {
-      dialog: false,
-      dialog2: false,
-      dialog3: false,
-      dialog_like: false,
-      colorList: ["#26A69A", "#00B0FF", "#5C6BC0", "#FFB300", "#E57373"],
-      currentTab: 0, // 0 1 2
-      primary: {
-        name: "初级",
-        totalPage: 1,
-        currentPage: 1,
-        list: []
-      },
-      medium: {
-        name: "中级",
-        totalPage: 1,
-        currentPage: 1,
-        list: []
-      },
-      advanced: {
-        name: "高级",
-        totalPage: 1,
-        currentPage: 1,
-        list: []
-      },
-      searchText: "",
-      searchCourse: [],
-      searchTotalPage: 1,
-      searchCurrentPage: 1
-    };
-  },
-  watch: {
-    "primary.currentPage": {
-      handler: function(val) {
-        this.handleGetCoursesByType(val, "primary");
-      }
-    },
+      picList: [
+        "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
+        "https://empic.dfcfw.com/760490394338418691/w1080h540/art",
+        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fx0.ifengimg.com%2Fucms%2F2020_01%2FF96CBE690E19A583C58354D875665DD2A9F4D1E9_size335_w1270_h634.jpg&refer=http%3A%2F%2Fx0.ifengimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648451846&t=88538f0b5a7c01094f8abfb61918614c"
+      ],
+      infoList: [
+        {
+          title: "Foundations of ESG Investing",
+          description: "hhhhhhhhhhhhhhhhhhdddddddddddddddddd",
+          pic:"https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500"
+        },
+        {
+          title: "Foundations of ESG Investing",
+          description: "hh222222222222222hdddddddddddddddddd",
+          pic: "https://empic.dfcfw.com/760490394338418691/w1080h540/art",
 
-    "medium.currentPage": {
-      handler: function(val) {
-        this.handleGetCoursesByType(val, "medium");
-      }
-    },
-
-    "advance.currentPage": {
-      handler: function(val) {
-        this.handleGetCoursesByType(val, "advanced");
-      }
-    },
-
-    searchCurrentPage: function() {
-      this.handleSearchCourse();
-    },
-
-    searchText: function() {
-      this.handleSearchCourse();
-    }
-  },
-  methods: {
-    showDialog() {
-      this.dialog = true;
-    },
-    showDialogLike() {
-      this.dialog_like = true;
-    },
-    handleBuyCourse() {
-      Promise.resolve(1).then(res => {
-        this.dialog = false;
-        if (res) {
-          this.dialog2 = true;
-        } else {
-          this.dialog3 = true;
+        },
+        {
+          title: "Foundations of ESG Investing",
+          description: "333333333333333hhdddddddddddddddddd",
+          pic: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fx0.ifengimg.com%2Fucms%2F2020_01%2FF96CBE690E19A583C58354D875665DD2A9F4D1E9_size335_w1270_h634.jpg&refer=http%3A%2F%2Fx0.ifengimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648451846&t=88538f0b5a7c01094f8abfb61918614c"
         }
-      });
-    },
-
-    handleGetCoursesByType(page, type) {
-      const typeMap = { primary: "初级", medium: "中级", advanced: "高级" };
-      getCoursesByType({ uid: "", type: typeMap[type], page }).then(res => {
-        console.log(res);
-        this[type].totalPage = res.pages;
-        this[type].list = res.list;
-      });
-    },
-
-    handleSearchCourse() {
-      getCoursesByKey({
-        uid: "",
-        key: this.searchText,
-        page: this.searchCurrentPage
-      }).then(res => {
-        console.log(res);
-        this.searchCourse = res.list;
-        this.searchTotalPage = res.pages;
-      });
-    }
-  },
-  //加载
-  mounted() {
-    ["primary", "medium", "advanced"].forEach(t => {
-      this.handleGetCoursesByType(1, t);
-    });
-    this.handleSearchCourse();
+      ]
+    };
   }
 };
 </script>
+
+<style scoped>
+.big_img{
+  width: 100%;
+
+}
+</style>
