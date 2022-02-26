@@ -51,7 +51,7 @@
 </template>
 
 <script>
-// import { login } from "@/api/user";
+import { login } from "@/api/user";
 
 export default {
   name: "Login",

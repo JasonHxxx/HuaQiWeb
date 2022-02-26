@@ -5,7 +5,7 @@ import DefaultLayout from "@/layouts/defaultLayout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
-
+import Chart from "@/views/Chart.vue"
 // authentication
 // import { judgeTeacher, judgeStudent } from "@/util/auth";
 
@@ -22,6 +22,11 @@ const routes = [
         path: "/",
         name: "home",
         component: Home
+      },
+      {
+        path: "chart",
+        name: "Chart",
+        component: Chart
       },
       {
         path: "login",
