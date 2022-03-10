@@ -5,12 +5,12 @@ import DefaultLayout from "@/layouts/defaultLayout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import Chart from "@/views/Chart.vue"
-=======
+// =======
 import Esg from "@/views/Esg";
 
->>>>>>> dev
+// >>>>>>> dev
 // authentication
 // import { judgeTeacher, judgeStudent } from "@/util/auth";
 
