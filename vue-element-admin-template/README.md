@@ -1,5 +1,5 @@
 ### vue-element-admin-template
 
-#### 包含权限管理
 
-##### 登录 用户名 admin 密码 123
+登陆注册 密码不限
+股票作图TODO
