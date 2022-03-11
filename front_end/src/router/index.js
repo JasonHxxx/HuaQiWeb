@@ -51,7 +51,7 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: "/Esg",
+        path: "Esg",
         name: "Esgintro",
         component: Esg
       }
