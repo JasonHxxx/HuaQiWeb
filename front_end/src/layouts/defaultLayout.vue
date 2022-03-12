@@ -1,16 +1,17 @@
 <template>
   <div>
-    <v-app-bar color="#EEEEEE" dense dark extended extension-height="100">
+    <v-app-bar   color="white" extension-height="20" >
       <v-app-bar-nav-icon @click="direct('/')">
         <v-img
             lazy-src="../assets/logo.png"
-            max-height="50"
-            max-width="50"
+            max-height="80"
+            max-width="80"
             src="../assets/logo.png"
+            class="ms-10"
         ></v-img>
       </v-app-bar-nav-icon>
 
-      <v-app-bar-title  @click="direct('/')" c class="cursor">ESG</v-app-bar-title>
+<!--      <v-app-bar-title  @click="direct('/')" c class="cursor">ESG</v-app-bar-title>-->
 
       <v-spacer></v-spacer>
 

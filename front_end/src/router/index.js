@@ -5,13 +5,12 @@ import DefaultLayout from "@/layouts/defaultLayout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
-// <<<<<<< HEAD
 import Chart from "@/views/Chart.vue"
-// =======
 import Esg from "@/views/Esg";
+import myGroup from "@/views/stock/myGroup.vue";
+import ESGTestDo from "@/views/ESGTestDo";
+import EsgRe from "../views/EsgRe";
 
-// >>>>>>> dev
-// authentication
 // import { judgeTeacher, judgeStudent } from "@/util/auth";
 
 
@@ -47,15 +46,44 @@ const routes = [
   },
   {
     path: "/Esg",
-    name: "Esgintro",
+    name: "Esg",
     component: DefaultLayout,
     children: [
       {
-        path: "Esg",
+        path: "/Esg",
         name: "Esgintro",
         component: Esg
+      },
+      {
+        path: "esgtest",
+        name: "ESGtest",
+        component: ESGTestDo
       }
-      ]
+    ]
+  },
+  {
+    path: "/EsgRe",
+    name: "EsgRe",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/EsgRe",
+        name: "EsgRe",
+        component: EsgRe
+      }
+    ]
+  },
+  {
+    path: "/stock",
+    name: "stock",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "mygroup",
+        name: "mygroup",
+        component: myGroup
+      }
+    ]
   }
 ];
 

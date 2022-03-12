@@ -49,7 +49,7 @@ export default {
   methods: {
     handleMore() {
       alert("learn more!");
-      this.$router.push('/Esg')
+      this.$router.push(this.path)
     }
   }
 };
