@@ -9,8 +9,8 @@ import Chart from "@/views/Chart.vue"
 import Esg from "@/views/Esg";
 import myGroup from "@/views/stock/myGroup.vue";
 import ESGTestDo from "@/views/ESGTestDo";
-// >>>>>>> dev
-// authentication
+import EsgRe from "../views/EsgRe";
+
 // import { judgeTeacher, judgeStudent } from "@/util/auth";
 
 
@@ -58,6 +58,18 @@ const routes = [
         path: "esgtest",
         name: "ESGtest",
         component: ESGTestDo
+      }
+    ]
+  },
+  {
+    path: "/EsgRe",
+    name: "EsgRe",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/EsgRe",
+        name: "EsgRe",
+        component: EsgRe
       }
     ]
   },
