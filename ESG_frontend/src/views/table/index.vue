@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div id="stock_table" class="app-container">
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -7,25 +7,60 @@
       border
       fit
       highlight-current-row
+      :header-cell-style="{
+
+        'background-color': 'lightblue',
+
+        'color': 'black',
+
+        'border-bottom': '2px black solid'
+
+      }"
+      @row-click="handle"
     >
-      <el-table-column align="center" label="ID" width="95">
+      <el-table-column align="center" label="ID" width="50">
         <template slot-scope="scope">
           {{ scope.$index }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="Code">
         <template slot-scope="scope">
-          {{ scope.row.title }}
+          {{ scope.row.code }}
         </template>
       </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
+      <el-table-column label="Name" width="60">
         <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
+          {{ scope.row.name }}
         </template>
       </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
+      <el-table-column label="Market Capital">
         <template slot-scope="scope">
-          {{ scope.row.pageviews }}
+          {{ scope.row.marketCapital }}
+        </template>
+      </el-table-column>
+      <el-table-column label="Price">
+        <template slot-scope="scope">
+          {{ scope.row.price }}
+        </template>
+      </el-table-column>
+      <el-table-column label="Previous Close" width="90">
+        <template slot-scope="scope">
+          {{ scope.row.previousClose }}
+        </template>
+      </el-table-column>
+      <el-table-column label="High" width="60">
+        <template slot-scope="scope">
+          {{ scope.row.high }}
+        </template>
+      </el-table-column>
+      <el-table-column label="Low" width="60">
+        <template slot-scope="scope">
+          {{ scope.row.low }}
+        </template>
+      </el-table-column>
+      <el-table-column label="ChangePercent">
+        <template slot-scope="scope">
+          {{ scope.row.changePercent }}
         </template>
       </el-table-column>
       <el-table-column class-name="status-col" label="Status" width="110" align="center">
@@ -33,10 +68,22 @@
           <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="Display_time" width="200">
+      <el-table-column align="center" prop="created_at" label="IPO" width="150">
         <template slot-scope="scope">
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column align="center" label="Actions" width="120">
+        <template slot-scope="scope">
+          <el-button
+            type="primary"
+            size="small"
+            icon="el-icon-circle-check-outline"
+            @click="itemClick(scope.row)"
+          >
+            Add
+          </el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -73,7 +120,28 @@ export default {
         this.list = response.data.items
         this.listLoading = false
       })
+    },
+    handle(row, event, column) {
+      this.$router.push({ path: '/example/stock', query: { sid: row.code}})
     }
   }
 }
 </script>
+
+<style>
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: oldlace;
+  opacity: 0.7;
+}
+
+.el-table {
+  background: oldlace;
+}
+
+.el-table__body tr.current-row>td{
+
+  background-color: tomato   !important;
+
+}
+
+</style>

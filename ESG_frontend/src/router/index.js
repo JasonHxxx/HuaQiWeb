@@ -74,7 +74,13 @@ export const constantRoutes = [
         path: 'table',
         name: 'Table',
         component: () => import('@/views/table/index'),
-        meta: { title: 'Stocks', icon: 'table' }
+        meta: { title: 'Market', icon: 'table' }
+      },
+      {
+        path: 'stock',
+        name: 'Stock',
+        component: () => import('@/views/charts/stock-chart.vue'),
+        meta: { title: 'Stocks', icon: 'el-icon-s-data' }
       },
       // {
       //   path: 'tree',

@@ -7,3 +7,11 @@ export function getChartData(type) {
     params: { type }
   })
 }
+
+export function getStock(sid) {
+  return request({
+    url: '/example/stock',
+    methods: 'get',
+    params: { sid }
+  })
+}
