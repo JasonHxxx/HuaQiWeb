@@ -21,7 +21,9 @@
             {{ testInfo.test_name }}
           </p>
           <div class="text--secondary">
-            {{testInfo.test_detail}}<br />
+            {{testInfo.test_detail1}}<br />
+            {{testInfo.test_detail2}}<br />
+            {{testInfo.test_detail3}}<br />
             共 {{ testInfo.test_len }} 小题
           </div>
         </v-card-text>
@@ -35,7 +37,7 @@
         <v-divider class="mt-6"></v-divider>
       </v-sheet>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="(q, i) in socialQuestions1" :key="q.qid" grey>
+        <div v-for="(q, i) in eQuestions1" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ i + 1 }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -52,7 +54,7 @@
         </div>
       </v-list>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="q in socialQuestions2" :key="q.qid" grey>
+        <div v-for="q in eQuestions2" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ q.qid }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -78,7 +80,7 @@
         <v-divider class="mt-6"></v-divider>
       </v-sheet>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="(q, i) in socialQuestions3" :key="q.qid" grey>
+        <div v-for="(q, i) in sQuestions1" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ i + 1 }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -95,7 +97,7 @@
         </div>
       </v-list>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="q in socialQuestions4" :key="q.qid" grey>
+        <div v-for="q in sQuestions2" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ q.qid }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -120,7 +122,7 @@
         <v-divider class="mt-6"></v-divider>
       </v-sheet>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="(q, i) in socialQuestions5" :key="q.qid" grey>
+        <div v-for="(q, i) in gQuestions1" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ i + 1 }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -137,7 +139,7 @@
         </div>
       </v-list>
       <v-list class="mx-auto" max-width="800">
-        <div v-for="q in socialQuestions6" :key="q.qid" grey>
+        <div v-for="q in gQuestions2" :key="q.qid" grey>
           <v-card-text class="question_detail text-darken-1" max-width="800">
             {{ q.qid }} .{{ q.detail }}
             <v-container class="px-0" fluid>
@@ -156,23 +158,23 @@
     </div>
 
     <v-alert
-      class="alert"
-      outlined
-      type="success"
-      text
-      v-show="showSuccessDialog"
-      transition="scroll-y-transition"
+        class="alert"
+        outlined
+        type="success"
+        text
+        v-show="showSuccessDialog"
+        transition="scroll-y-transition"
     >
       提交成功！
     </v-alert>
     <!-- alert -->
     <v-alert
-      class="alert"
-      outlined
-      type="warning"
-      text
-      v-show="showFailDialog"
-      transition="scroll-y-transition"
+        class="alert"
+        outlined
+        type="warning"
+        text
+        v-show="showFailDialog"
+        transition="scroll-y-transition"
     >
       {{ msg }}
     </v-alert>
@@ -193,7 +195,17 @@ export default {
     return {
       T: true,
       F: false,
-      socialQuestions1: [
+      testInfo: {
+        test_name: "ESG偏向问卷调查",
+        test_len: 24,
+        test_detail1:
+            "首先请填写一个问卷，以便我们更好地了解您。",
+        test_detail2:
+        "请对以下观点做出判断，我们将由此判断您对E、S、G的看重程度",
+        test_detail3:
+        "每一类前5小问均按从左到右的顺序，记1-5分。每一类6、7、8问得分称以2之后与其他题得分相加计入总分。分数越高说明越看重E/S/G。"
+      },
+      eQuestions1: [
         {
           qid: 1,
           detail: "企业环境风险的暴露程度会对企业绩效产生很大影响。",
@@ -220,11 +232,11 @@ export default {
           record: -1
         }
       ],
-      socialQuestions2: [
+      eQuestions2: [
         {
           qid: 6,
           detail:
-            "A企业短期收益明显高于B企业，但环境风险也明显高于B企业，你会更偏向于哪个企业。",
+              "A企业短期收益明显高于B企业，但环境风险也明显高于B企业，你会更偏向于哪个企业。",
           optionA: "绝对偏向于A",
           optionB: "比较偏向于A",
           optionC: "偏向程度一致",
@@ -235,7 +247,7 @@ export default {
         {
           qid: 7,
           detail:
-            "作为长期投资的公司，短期内你更想看到它的收益提高，还是更想看到它的环境风险降低。",
+              "作为长期投资的公司，短期内你更想看到它的收益提高，还是更想看到它的环境风险降低。",
           optionA: "非常希望短期收益提高",
           optionB: "可以将少量短期收益的提高,转变为环境风险的降低",
           optionC: "希望二者均等变化",
@@ -246,7 +258,7 @@ export default {
         {
           qid: 8,
           detail:
-            "作为一个在环境领域发生过“黑天鹅”时间的公司，虽然在此领域没有很好的改观，但是当下有极高的预期收益，你会去投资吗。",
+              "作为一个在环境领域发生过“黑天鹅”时间的公司，虽然在此领域没有很好的改观，但是当下有极高的预期收益，你会去投资吗。",
           optionA: "会进行大量投资",
           optionB: "较为偏好，但会谨慎投资",
           optionC: "以中立态度进行投资",
@@ -255,13 +267,132 @@ export default {
           record: -1
         }
       ],
-      testInfo: {
-        test_name: "ESG偏向问卷调查",
-        test_len: 24,
-        test_detail:
-          "请对以下观点做出判断，我们将由此判断您对E、S、G的看重程度\n" +
-          "每一类前5小问均按从左到右的顺序，记1-5分。每一类6、7、8问得分称以2之后与其他题得分相加计入总分。分数越高说明越看重E/S/G。"
-      },
+
+
+      sQuestions1: [
+        {
+          qid: 1,
+          detail: "在选择投资目标时会重点关注目标企业的行业竞争环境。",
+          record: -1
+        },
+        {
+          qid: 2,
+          detail: "能较好的处理员工问题的企业极具投资价值。",
+          record: -1
+        },
+        {
+          qid: 3,
+          detail: "在面对金融和经济风险时更加从容的企业更具投资价值。",
+          record: -1
+        },
+        {
+          qid: 4,
+          detail: "如果目标公司对其所在行业的发展有较大贡献则说明其投资潜力较大。",
+          record: -1
+        },
+        {
+          qid: 5,
+          detail: "客户和消费者的满意度也是衡量企业价值的重要指标。",
+          record: -1
+        }
+      ],
+      sQuestions2: [
+        {
+          qid: 6,
+          detail:
+              "A企业短期收益明显高于B企业，但环境风险也明显高于B企业，你会更偏向于哪个企业。",
+          optionA: "绝对偏向于A",
+          optionB: "比较偏向于A",
+          optionC: "偏向程度一致",
+          optionD: "比较偏向于B",
+          optionE: "绝对偏向于B",
+          record: -1
+        },
+        {
+          qid: 7,
+          detail:
+              "作为长期投资的公司，短期内你更想看到它的收益提高，还是更想看到它的环境风险降低。",
+          optionA: "非常希望短期收益提高",
+          optionB: "可以将少量短期收益的提高,转变为环境风险的降低",
+          optionC: "希望二者均等变化",
+          optionD: "可以将少量环境风险的降低，转变为短期收益的提高",
+          optionE: "非常希望环境风险降低",
+          record: -1
+        },
+        {
+          qid: 8,
+          detail:
+              "作为一个在环境领域发生过“黑天鹅”时间的公司，虽然在此领域没有很好的改观，但是当下有极高的预期收益，你会去投资吗。",
+          optionA: "会进行大量投资",
+          optionB: "较为偏好，但会谨慎投资",
+          optionC: "以中立态度进行投资",
+          optionD: "较为厌恶，但会少量投资",
+          optionE: "完全不会投资",
+          record: -1
+        }
+      ],
+      gQuestions1: [
+        {
+          qid: 1,
+          detail: "公司的信息披露水平是你选择该公司时关注的重要因素。",
+          record: -1
+        },
+        {
+          qid: 2,
+          detail: "您在选择投资目标时不会考虑公司治理存在异常的公司。",
+          record: -1
+        },
+        {
+          qid: 3,
+          detail: "利益相关方参与度和协调程度较高的公司非常值得信赖。",
+          record: -1
+        },
+        {
+          qid: 4,
+          detail: "长期合规操作的公司一般都具有投资价值。",
+          record: -1
+        },
+        {
+          qid: 5,
+          detail: "管理层架构较好的公司更容易受到投资者青睐。",
+          record: -1
+        }
+      ],
+      gQuestions2: [
+        {
+          qid: 6,
+          detail:
+              "A企业短期收益明显高于B企业，但环境风险也明显高于B企业，你会更偏向于哪个企业。",
+          optionA: "绝对偏向于A",
+          optionB: "比较偏向于A",
+          optionC: "偏向程度一致",
+          optionD: "比较偏向于B",
+          optionE: "绝对偏向于B",
+          record: -1
+        },
+        {
+          qid: 7,
+          detail:
+              "作为长期投资的公司，短期内你更想看到它的收益提高，还是更想看到它的环境风险降低。",
+          optionA: "非常希望短期收益提高",
+          optionB: "可以将少量短期收益的提高,转变为环境风险的降低",
+          optionC: "希望二者均等变化",
+          optionD: "可以将少量环境风险的降低，转变为短期收益的提高",
+          optionE: "非常希望环境风险降低",
+          record: -1
+        },
+        {
+          qid: 8,
+          detail:
+              "作为一个在环境领域发生过“黑天鹅”时间的公司，虽然在此领域没有很好的改观，但是当下有极高的预期收益，你会去投资吗。",
+          optionA: "会进行大量投资",
+          optionB: "较为偏好，但会谨慎投资",
+          optionC: "以中立态度进行投资",
+          optionD: "较为厌恶，但会少量投资",
+          optionE: "完全不会投资",
+          record: -1
+        }
+      ],
       msg: "",
       showSuccessDialog: false,
       showFailDialog: false,

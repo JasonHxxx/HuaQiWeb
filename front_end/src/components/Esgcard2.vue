@@ -28,9 +28,14 @@ export default {
         "https://gitee.com/huyuework/image/raw/master/2022/technology.jpeg",
       ],
       texts: [
-        "ssssssssssb uhvuvjsssssooooooooo ooooooooooooooooooooooosssss",
+        "ESG在中国的政策背景与现实需求：",
         "aaa aaaaaaaaaa aaaaa aaaaaaaaaaaaa",
-        "wwwwww wwwwwwwwwwww wwwwwwwwww"
+        "在中国谈论ESG，最大的政策背景就是“碳中和”与“共同富裕”。事实上，重视减少碳排放本身也是社会责任的一种，为了实现“E”、“S”，更需要企业管理理念、治理结构等根本性的改革，因此ESG中的三个维度是相辅相成的。十四五规划已经为未来五年绿色化转型与发展定调，这对市场投融资主题是一个较为明确的指引。随着针对绿色发展的法律与政策的健全，绿色主题的可投资性也会增强，我国“E”相关的基金将进一步发展。\n" +
+        "\n" +
+        "作者：诺亚财富\n" +
+        "链接：https://www.zhihu.com/question/21565680/answer/2085628289\n" +
+        "来源：知乎\n" +
+        "著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
       ]
     };
   }

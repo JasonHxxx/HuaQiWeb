@@ -48,7 +48,7 @@ export default {
   },
   methods: {
     handleMore() {
-      alert("learn more!");
+      // alert("learn more!");
       this.$router.push(this.path)
     }
   }

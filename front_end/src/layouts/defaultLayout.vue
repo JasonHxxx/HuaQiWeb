@@ -15,6 +15,9 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn text color="#424242" @click="direct('/community')">
+        社区
+      </v-btn>
       <v-btn text color="#424242" @click="direct('/login')">
         登录/注册
       </v-btn>

@@ -4,8 +4,7 @@ module.exports = {
     host: "0.0.0.0",
     proxy: {
       "^/api": {
-        // target: "http://courselearning.seec.seecoder.cn/",
-        target: "http://localhost:8081",
+        target: "http://localhost:8080",
         ws: true,
         changeOrigin: true
         // pathRewrite: {

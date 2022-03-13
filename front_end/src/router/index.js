@@ -10,8 +10,7 @@ import Esg from "@/views/Esg";
 import myGroup from "@/views/stock/myGroup.vue";
 import ESGTestDo from "@/views/ESGTestDo";
 import EsgRe from "../views/EsgRe";
-
-// import { judgeTeacher, judgeStudent } from "@/util/auth";
+import PostHeader from "../components/post/PostHeader";
 
 
 Vue.use(VueRouter);
@@ -84,6 +83,11 @@ const routes = [
         component: myGroup
       }
     ]
+  },
+  {
+    path: "/community",
+    name: "community",
+    component: PostHeader
   }
 ];
 
