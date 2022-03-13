@@ -9,8 +9,12 @@ import Chart from "@/views/Chart.vue"
 import Esg from "@/views/Esg";
 import myGroup from "@/views/stock/myGroup.vue";
 import ESGTestDo from "@/views/ESGTestDo";
-import EsgRe from "../views/EsgRe";
 import PostHeader from "../components/post/PostHeader";
+import EsgRe from "@/views/EsgRe";
+//charts
+import geiChart from "@/views/charts/gei-chart"
+
+// import { judgeTeacher, judgeStudent } from "@/util/auth";
 
 
 Vue.use(VueRouter);
@@ -81,6 +85,11 @@ const routes = [
         path: "mygroup",
         name: "mygroup",
         component: myGroup
+      },
+      {
+        path: "charts",
+        name: "charts",
+        component: geiChart
       }
     ]
   },
