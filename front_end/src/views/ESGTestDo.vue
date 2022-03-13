@@ -453,7 +453,7 @@ export default {
 
 <style scoped>
 .question_detail {
-  font-size: large;
+  font-size: 20px;
 }
 .part_name {
   font-size: 36px;
