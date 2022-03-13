@@ -1,13 +1,12 @@
 <template>
   <div>
     <v-app-bar   color="white" extension-height="20" >
-      <v-app-bar-nav-icon @click="direct('/')">
+      <v-app-bar-nav-icon @click="direct('/')" class="ms-10">
         <v-img
             lazy-src="../assets/logo.png"
             max-height="80"
             max-width="80"
             src="../assets/logo.png"
-            class="ms-10"
         ></v-img>
       </v-app-bar-nav-icon>
 
