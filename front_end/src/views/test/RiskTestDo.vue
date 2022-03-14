@@ -135,7 +135,7 @@ export default {
       let qlist = this.questions;
       let sum = 0;
       for (let i in qlist) {
-        sum += parseInt(qlist[i].percent) * parseInt(qlist[i].record);
+        sum += parseInt(qlist[i].percent) * parseFloat(qlist[i].record);
       }
       return sum * 0.01;
     },
