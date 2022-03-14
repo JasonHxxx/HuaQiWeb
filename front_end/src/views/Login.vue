@@ -24,19 +24,20 @@
         {{ msg }}
       </v-alert>
       <form class="pa-12 grey lighten-5 mt-10 form">
-        <v-text-field v-model="phone" label="手机号码"></v-text-field>
+        <v-text-field v-model="phone" label="手机号码" color="cyan"></v-text-field>
         <v-text-field
           v-model="password"
           label="密码"
           type="password"
+          color="cyan"
         ></v-text-field>
-        <v-btn class="ml-0 mt-8 info" @click="handleLogin">
+        <v-btn class="ml-0 mt-8"  @click="handleLogin" color="cyan">
           登录
         </v-btn>
       </form>
       <v-btn
         text
-        color="primary"
+        color="cyan"
         class="float-right ma-4"
         @click="
           () => {

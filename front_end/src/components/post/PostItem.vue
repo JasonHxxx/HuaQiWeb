@@ -1,6 +1,7 @@
 <template>
   <div @click="clickItem(postId)">
     <div class="tit">{{ post.title }}</div>
+    <div class="content">{{ post.content }}</div>
     <div class="bot">
       <span>{{ name }}• </span>
       <span>{{ time }}• </span>

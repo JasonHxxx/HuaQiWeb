@@ -24,21 +24,22 @@
         {{ msg }}
       </v-alert>
       <form class="pa-12 grey lighten-5 mt-10 form">
-        <v-text-field v-model="username" label="用户名"></v-text-field>
-        <v-text-field v-model="phone" label="手机号码"></v-text-field>
+        <v-text-field v-model="username" label="用户名" color="cyan"></v-text-field>
+        <v-text-field v-model="phone" label="手机号码" color="cyan"></v-text-field>
         <v-text-field
           v-model="password"
           type="password"
           label="密码"
+          color="cyan"
         ></v-text-field>
-        <v-select v-model="userRole" :items="roles" label="用户角色"></v-select>
-        <v-btn class="ml-0 mt-8 info" @click="handleRegister">
+<!--        <v-select v-model="userRole" :items="roles" label="用户角色"></v-select>-->
+        <v-btn class="ml-0 mt-8 " @click="handleRegister" color="cyan">
           注册
         </v-btn>
       </form>
       <v-btn
         text
-        color="primary"
+        color="cyan"
         class="float-right ma-4"
         @click="
           () => {

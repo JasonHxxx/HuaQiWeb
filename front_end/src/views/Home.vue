@@ -65,7 +65,7 @@ export default {
             "Sustainalytics’ ESG Risk Ratings measure a company’s exposure to industry-specific material ESG risks and how well a company is managing those risks.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
-          path: "/Esg"
+          path: "/Esg/intro"
         },
         {
           title: "ESG rating",
@@ -81,7 +81,7 @@ export default {
             "We provides ESG score prediction services for enterprises in the coming years.This will help you analyze a company's growth potential.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
-          path: "/Esg"
+          path: "/community"
         },
         {
           title: "Investment portfolio",
