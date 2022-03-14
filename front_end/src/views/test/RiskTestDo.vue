@@ -1,17 +1,12 @@
 <template>
-  <div>
+  <div id="bg">
     <v-sheet class="pa-4 mx-auto" max-width="800">
-      <v-toolbar color="white" flat>
-        <v-btn icon light small>
-          <v-icon color="grey darken-2" large @click="back">
-            mdi-arrow-left
-          </v-icon>
-        </v-btn>
-
-        <v-toolbar-title class=" pa-2 text-h5 text--secondary">
-          返回
-        </v-toolbar-title>
-      </v-toolbar>
+      <v-btn icon light small class="ms-4">
+        <v-icon color="grey darken-2" large @click="back">
+          mdi-arrow-left
+        </v-icon>
+        <span class="text-h6">返回</span>
+      </v-btn>
     </v-sheet>
     <v-sheet class="pa-4 mx-auto" max-width="800">
       <v-spacer></v-spacer>
@@ -20,7 +15,7 @@
           <p class="text-h4 text--secondary d-flex justify-center">
             {{ testInfo.test_name }}
           </p>
-          <div class="text--secondary">
+          <div class="text--primary">
             <p>{{ testInfo.test_detail }}</p>
             <p>{{ testInfo.result }}</p>
           </div>
@@ -168,5 +163,8 @@ export default {
 <style scoped>
 .question_detail {
   font-size: 16px;
+}
+#bg{
+  background-image: url("https://gitee.com/huyuework/image/raw/master/2022/yana-gorbunova-Pl1O6qwe14M-unsplash.jpg");
 }
 </style>
