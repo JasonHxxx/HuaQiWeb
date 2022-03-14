@@ -76,9 +76,9 @@ export default {
           path: "/EsgRe"
         },
         {
-          title: "ESG predictions",
+          title: "Community",
           description:
-            "We provides ESG score prediction services for enterprises in the coming years.This will help you analyze a company's growth potential.",
+            "We provide you with a posting community where you can express your opinions and participate in community discussions.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
           path: "/community"
