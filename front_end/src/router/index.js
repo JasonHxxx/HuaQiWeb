@@ -8,14 +8,14 @@ import Home from "@/views/Home.vue";
 import Chart from "@/views/Chart.vue"
 import Esg from "@/views/Esg";
 import myGroup from "@/views/stock/myGroup.vue";
-import ESGTestDo from "@/views/ESGTestDo";
 import PostHeader from "../components/post/PostHeader";
 import EsgRe from "@/views/EsgRe";
 //charts
 import geiChart from "@/views/charts/gei-chart"
-
-// import { judgeTeacher, judgeStudent } from "@/util/auth";
-
+//test
+import ESGTestDo from "@/views/test/ESGTestDo";
+import RiskTestDo from "@/views/test/RiskTestDo";
+import TestMain from "@/views/test/TestMain";
 
 Vue.use(VueRouter);
 
@@ -48,19 +48,36 @@ const routes = [
     ]
   },
   {
-    path: "/Esg",
-    name: "Esg",
+    path: "/esg",
+    name: "esg",
     component: DefaultLayout,
     children: [
       {
-        path: "/Esg",
-        name: "Esgintro",
+        path: "intro",
+        name: "intro",
         component: Esg
+      },
+    ]
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/",
+        name: "test",
+        component: TestMain
       },
       {
         path: "esgtest",
-        name: "ESGtest",
+        name: "ESGTest",
         component: ESGTestDo
+      },
+      {
+        path: "risktest",
+        name: "RiskTest",
+        component: RiskTestDo
       }
     ]
   },
