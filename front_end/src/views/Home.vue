@@ -65,7 +65,7 @@ export default {
             "Sustainalytics’ ESG Risk Ratings measure a company’s exposure to industry-specific material ESG risks and how well a company is managing those risks.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
-          path: "/Esg/intro"
+          path: "/esg/intro"
         },
         {
           title: "ESG rating",
@@ -73,7 +73,7 @@ export default {
             "In order to view the company's ratings please click on this section.We offer a detailed presentation of three aspects for you.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
-          path: "/EsgRe"
+          path: "/esg/rate"
         },
         {
           title: "Community",
@@ -96,7 +96,7 @@ export default {
           description:
             "In this module, you can see the broader market index in the form of charts, including the Shanghai Composite Index and so on.",
           pic: "https://empic.dfcfw.com/760490394338418691/w1080h540/art",
-          path: "/Esg"
+          path: "/stock/index"
         },
         {
           title: "Stock depth analysis",
@@ -104,7 +104,7 @@ export default {
             "We help you analyze stock information in depth from multiple dimensions, which you can use as a reference.",
           pic:
             "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fx0.ifengimg.com%2Fucms%2F2020_01%2FF96CBE690E19A583C58354D875665DD2A9F4D1E9_size335_w1270_h634.jpg&refer=http%3A%2F%2Fx0.ifengimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648451846&t=88538f0b5a7c01094f8abfb61918614c",
-          path: "/Esg"
+          path: "/stock/all"
         }
       ]
     };

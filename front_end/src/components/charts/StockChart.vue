@@ -47,8 +47,8 @@ export default {
     }
   },
   mounted() {
-    this.chartTitle = ''
-    const sid = this.$route.query.sid
+    this.chartTitle = '';
+    const sid = this.$route.query.sid;
     getStock(sid).then(response => {
       const chart_data = response.data.chart_data
       this.code = response.data.code

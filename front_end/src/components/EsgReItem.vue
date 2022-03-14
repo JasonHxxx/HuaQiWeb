@@ -1,7 +1,7 @@
 <template>
   <v-card
       class="mx-auto"
-      color="#26c6da"
+      :color="cardColor"
       dark
       width="400"
       height="500"
@@ -38,6 +38,10 @@ export default {
     kindDes: {
       type: String,
       default: "类型"
+    },
+    cardColor: {
+      type: String,
+      default: "#26c6da"
     }
   },
   data: () => ({
@@ -45,7 +49,6 @@ export default {
   })
 }
 </script>
-
 
 <style scoped></style>
 

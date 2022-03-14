@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Chart from '@/components/Charts/StockChart'
+import Chart from '@/components/charts/StockChart'
 
 export default {
   name: 'StockChart',

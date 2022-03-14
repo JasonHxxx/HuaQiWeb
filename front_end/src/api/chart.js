@@ -1,9 +1,11 @@
 // import request from '@/util/request'
 import axios from "axios";
-export function getChartData(type) {
-  return axios.get("/chartData", { type }).then(res => {
+import "@/mock/chart.js";
+
+export const getChartData = t => {
+  return axios.get('/chartData',{data:t}).then(res => {
     return res.data;
-  })
+  });
 }
 //  return axios
 //     .post(`${USER_MODULE}/register`, {
@@ -16,8 +18,8 @@ export function getChartData(type) {
 //     .then(res => {
 //       return res.data;
 //     });
-export function getStock(sid) {
-  return axios.get("/example/stock", { sid }).then(res => {
+export const getStock = sid => {
+  return axios.get("/example/stock", { data: sid }).then(res => {
     return res.data;
   })
 }

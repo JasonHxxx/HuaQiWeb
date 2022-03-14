@@ -7,15 +7,18 @@ import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
 import Chart from "@/views/Chart.vue"
 import Esg from "@/views/Esg";
-import myGroup from "@/views/stock/myGroup.vue";
+
 import PostHeader from "../components/post/PostHeader";
 import EsgRe from "@/views/EsgRe";
-//charts
-import geiChart from "@/views/charts/gei-chart"
+//stock
+import IndexStock from "@/views/stock/IndexStock";
+import myGroup from "@/views/stock/myGroup.vue";
+import StockChart from "@/views/stock/StockChart";
 //test
 import ESGTestDo from "@/views/test/ESGTestDo";
 import RiskTestDo from "@/views/test/RiskTestDo";
 import TestMain from "@/views/test/TestMain";
+import StockLIst from "../views/stock/StockLIst";
 
 Vue.use(VueRouter);
 
@@ -57,6 +60,11 @@ const routes = [
         name: "intro",
         component: Esg
       },
+      {
+        path: "rate",
+        name: "EsgRe",
+        component: EsgRe
+      }
     ]
   },
   {
@@ -82,18 +90,6 @@ const routes = [
     ]
   },
   {
-    path: "/EsgRe",
-    name: "EsgRe",
-    component: DefaultLayout,
-    children: [
-      {
-        path: "/EsgRe",
-        name: "EsgRe",
-        component: EsgRe
-      }
-    ]
-  },
-  {
     path: "/stock",
     name: "stock",
     component: DefaultLayout,
@@ -104,9 +100,19 @@ const routes = [
         component: myGroup
       },
       {
-        path: "charts",
-        name: "charts",
-        component: geiChart
+        path: "index",
+        name: "IndexStock",
+        component: IndexStock
+      },
+      {
+        path: "all",
+        name: "stockFrom",
+        component: StockLIst
+      },
+      {
+        path: "detail",
+        name: "stockChart",
+        component: StockChart
       }
     ]
   },
