@@ -7,49 +7,61 @@
         </el-carousel-item>
       </el-carousel>
     </div>
-    <div
-      class="mt-6 d-flex justify-start"
-      style="width: 70%;margin-left: 19.5%"
-    >
-      <InfoItem
-        v-for="(info, i) in infoList.slice(0, 3)"
-        :key="i"
-        :title="info.title"
-        :description="info.description"
-        :pic="info.pic"
-        :path="info"
-      >
-      </InfoItem>
+    <div style="background-color: rgba(127,127,125,0.1) " class="d-flex justify-center pb-4">
+      <div style="width: 70%">
+        <div class="d-flex justify-center align-center">
+          <v-divider></v-divider>
+          <div class="part_name mx-4">E S G</div>
+          <v-divider></v-divider>
+        </div>
+        <div
+          class="d-flex justify-space-between"
+        >
+          <InfoItem
+            v-for="(info, i) in infoList.slice(0, 3)"
+            :key="i"
+            :title="info.title"
+            :description="info.description"
+            :pic="info.pic"
+            :path="info"
+          >
+          </InfoItem>
+        </div>
+        <div class="d-flex justify-center align-center">
+          <v-divider></v-divider>
+          <div class="part_name mx-4">S T O C K</div>
+          <v-divider></v-divider>
+        </div>
+        <div
+          class="d-flex justify-space-between"
+        >
+          <InfoItem
+            v-for="(info, i) in infoList.slice(3, 6)"
+            :key="i"
+            :title="info.title"
+            :description="info.description"
+            :pic="info.pic"
+            :path="info.path"
+          >
+          </InfoItem>
+        </div>
+      </div>
+<!--    <v-spacer></v-spacer>-->
     </div>
 
-    <v-divider></v-divider>
-
-    <div
-      class="mt-6 d-flex justify-start"
-      style="width: 90%;margin-left: 19.5%"
-    >
-      <InfoItem
-        v-for="(info, i) in infoList.slice(3, 6)"
-        :key="i"
-        :title="info.title"
-        :description="info.description"
-        :pic="info.pic"
-        :path="info.path"
-      >
-      </InfoItem>
-    </div>
-    <v-spacer></v-spacer>
     <Footer></Footer>
   </div>
 </template>
 <script>
 import InfoItem from "@/components/InfoItem.vue";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer.vue";
+// import AboutUs from "@/components/AboutUs.vue";
 export default {
   name: "first",
   components: {
     InfoItem,
-    Footer
+    Footer,
+    // AboutUs
   },
   data() {
     return {
@@ -115,5 +127,12 @@ export default {
 <style scoped>
 .big_img {
   width: 100%;
+}
+.part_name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  color: #1E3A4D;
 }
 </style>
