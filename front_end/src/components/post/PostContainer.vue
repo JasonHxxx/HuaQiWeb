@@ -1,10 +1,16 @@
 <template>
   <div>
-    <div>
-      <v-btn v-if="status === '0'" @click="changeStatus">点击按回复时间查看</v-btn>
-      <v-btn v-else-if="status === '1'" @click="changeStatus">点击按回帖时间查看</v-btn>
-    </div>
     <v-container fluid>
+      <div class="d-flex justify-start align-center">
+        <v-btn v-if="status === '0'" dark color="cyan" @click="changeStatus">点击按回复时间查看</v-btn>
+        <v-btn v-else-if="status === '1'" dark color="cyan" @click="changeStatus">点击按回帖时间查看</v-btn>
+        <v-spacer></v-spacer>
+        <div>
+          <v-btn fab color="cyan" dark @click.stop="dialog = true">
+          <v-icon>mdi-plus</v-icon>
+          </v-btn>
+        </div>
+      </div>
       <div v-for="post in posts" :key="post.postId">
         <v-card>
           <v-row class="ma-4">
@@ -19,9 +25,6 @@
           color="cyan"
       ></v-pagination>
     </v-container>
-    <v-btn fab color="cyan" left absolute @click.stop="dialog = true">
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
     <v-dialog
         v-model="dialog"
         max-width="800"

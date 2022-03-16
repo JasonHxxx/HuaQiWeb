@@ -1,19 +1,20 @@
 <template>
   <div>
-    <v-app-bar absolute
-               color="#6A76AB"
-               dark
-               shrink-on-scroll
-               prominent
-               src="/img/back.png"
-               fade-img-on-scroll
-               scroll-target="#scrolling-techniques-3">
+    <v-app-bar
+      absolute
+      color="#6A76AB"
+      dark
+      shrink-on-scroll
+      prominent
+      src="/img/back.png"
+      fade-img-on-scroll
+      scroll-target="#scrolling-techniques-3"
+    >
       <v-app-bar-nav-icon @click="direct('/student')">
         <v-icon>mdi-home</v-icon>
       </v-app-bar-nav-icon>
 
       <v-toolbar-title @click="direct('/student')" class="cursor">
-
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -34,21 +35,21 @@
         注销
       </v-btn>
       <v-menu left bottom>
-<!--        <template v-slot:activator="{ on, attrs }">-->
-<!--          <v-btn icon v-bind="attrs" v-on="on">-->
-<!--            <v-icon>mdi-dots-vertical</v-icon>-->
-<!--          </v-btn>-->
-<!--        </template>-->
+        <!--        <template v-slot:activator="{ on, attrs }">-->
+        <!--          <v-btn icon v-bind="attrs" v-on="on">-->
+        <!--            <v-icon>mdi-dots-vertical</v-icon>-->
+        <!--          </v-btn>-->
+        <!--        </template>-->
 
-<!--        <v-list>-->
-<!--          <v-list-item-->
-<!--            v-for="opt in optionList"-->
-<!--            :key="opt.optionName"-->
-<!--            @click="direct(opt.link)"-->
-<!--          >-->
-<!--            <v-list-item-title>{{ opt.optionName }}</v-list-item-title>-->
-<!--          </v-list-item>-->
-<!--        </v-list>-->
+        <!--        <v-list>-->
+        <!--          <v-list-item-->
+        <!--            v-for="opt in optionList"-->
+        <!--            :key="opt.optionName"-->
+        <!--            @click="direct(opt.link)"-->
+        <!--          >-->
+        <!--            <v-list-item-title>{{ opt.optionName }}</v-list-item-title>-->
+        <!--          </v-list-item>-->
+        <!--        </v-list>-->
       </v-menu>
     </v-app-bar>
     <router-view />

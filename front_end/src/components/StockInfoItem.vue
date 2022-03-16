@@ -1,7 +1,7 @@
 <template>
   <v-card color="#385F73" dark style="width: calc(90vw)">
     <v-card-title>{{name}}</v-card-title>
-    <div class="d-flex justify-start" >
+    <div class="d-flex justify-start ms-2" >
       <v-col
       :md="3">
         <v-row>
@@ -27,11 +27,11 @@
       <v-col :md="3">
         <v-row>
           <span class="ma-2">交易量</span>
-          <span class="my-2">{{ volumn }}</span>
+          <span class="my-2">{{ volumn }}亿手</span>
         </v-row>
         <v-row>
           <span class="ma-2">交易额</span>
-          <span class="my-2">{{ money }}</span>
+          <span class="my-2">{{ money }}亿</span>
         </v-row>
       </v-col>
     </div>
@@ -60,11 +60,11 @@ export default {
     },
     volumn: {
       type: [String, Number],
-      default: "3.38亿手"
+      default: "3.38"
     },
     money: {
       type: [String, Number],
-      default: "4180.56亿"
+      default: "4180.56"
     },
     name: {
       type: String,

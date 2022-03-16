@@ -8,7 +8,7 @@
 import Chart from '@/components/charts/StockChart'
 
 export default {
-  name: 'StockChart',
+  name: "StockChart",
   components: { Chart },
   data() {
     return {

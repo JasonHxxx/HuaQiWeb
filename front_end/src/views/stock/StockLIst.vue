@@ -1,5 +1,8 @@
 <template>
   <div id="stock_table" class="app-container">
+    <div class="justify-end d-flex">
+      <v-btn @click="goGroup" class="right ma-2" id="go">投资组合</v-btn>
+    </div>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -82,7 +85,7 @@
             icon="el-icon-circle-check-outline"
             @click="itemClick(scope.row)"
           >
-            Add
+            Peek
           </el-button>
         </template>
       </el-table-column>
@@ -123,7 +126,10 @@ export default {
       })
     },
     handle(row) {
-      this.$router.push({ path: '/stock/detail', query: { sid: row.code}})
+      this.$router.push({ path: "/stock/detail", query: { sid: row.code } });
+    },
+    goGroup(){
+      this.$router.push("/stock/group");
     }
   }
 }
@@ -137,6 +143,10 @@ export default {
 
 .el-table {
   background: oldlace;
+}
+#go {
+  background-color: lightblue;
+  color: #000;
 }
 
 .el-table__body tr.current-row>td{

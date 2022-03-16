@@ -73,8 +73,11 @@ export default {
 .tit {
   font-size: 25px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .bot {
   margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 </style>

@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import { getUser } from "../../api/user";
-import PostContainer from "./PostContainer";
+import { getUser } from "@/api/user";
+import PostContainer from "@/components/post/PostContainer";
 
 export default {
   name: "PostHeader",

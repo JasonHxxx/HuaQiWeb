@@ -5,20 +5,20 @@ import DefaultLayout from "@/layouts/defaultLayout.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
-import Chart from "@/views/Chart.vue"
 import Esg from "@/views/Esg";
 
-import PostHeader from "../components/post/PostHeader";
+import PostHeader from "@/views/PostHeader";
 import EsgRe from "@/views/EsgRe";
 //stock
 import IndexStock from "@/views/stock/IndexStock";
-import myGroup from "@/views/stock/myGroup.vue";
 import StockChart from "@/views/stock/StockChart";
+import GroupCard from "@/views/stock/GroupCard";
+import StockLIst from "../views/stock/StockLIst";
 //test
 import ESGTestDo from "@/views/test/ESGTestDo";
 import RiskTestDo from "@/views/test/RiskTestDo";
 import TestMain from "@/views/test/TestMain";
-import StockLIst from "../views/stock/StockLIst";
+
 
 Vue.use(VueRouter);
 
@@ -32,11 +32,6 @@ const routes = [
         path: "/",
         name: "home",
         component: Home
-      },
-      {
-        path: "chart",
-        name: "Chart",
-        component: Chart
       },
       {
         path: "login",
@@ -95,9 +90,9 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: "mygroup",
-        name: "mygroup",
-        component: myGroup
+        path: "group",
+        name: "group",
+        component: GroupCard
       },
       {
         path: "index",
