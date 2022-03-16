@@ -64,7 +64,6 @@ export default {
     pictrueList: [],
     links: [
       { name: "Home", path: "/" },
-      { name: "About Us", path: "/" },
       { name: "Contact us", path: "/" }
     ]
   }),
