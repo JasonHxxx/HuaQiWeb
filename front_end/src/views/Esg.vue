@@ -21,8 +21,12 @@ import Esgcard2 from "../components/Esgcard2";
 import Esgcard3 from "../components/Esgcard3";
 export default {
   name: "Esg",
-  components: { Esgcard1, Esgcard2 , Esgcard3}
-
+  components: { Esgcard1, Esgcard2 , Esgcard3},
+  methods:{
+    mounted() {
+      window.addEventListener('scroll', this.scrollToTop)
+    }
+  }
 };
 </script>
 

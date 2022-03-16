@@ -111,18 +111,115 @@ const routes = [
       }
     ]
   },
-  {
-    path: "/community",
-    name: "community",
-    component: PostHeader
-  }
-];
+  routes:[
+    {
+      path: "/",
+      name: "Home",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "/",
+          name: "home",
+          component: Home
+        },
+        {
+          path: "chart",
+          name: "Chart",
+          component: Chart
+        },
+        {
+          path: "login",
+          name: "Login",
+          component: Login
+        },
+        {
+          path: "register",
+          name: "Register",
+          component: Register
+        }
+      ]
+    },
+    {
+      path: "/esg",
+      name: "esg",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "intro",
+          name: "intro",
+          component: Esg
+        },
+        {
+          path: "rate",
+          name: "EsgRe",
+          component: EsgRe
+        }
+      ]
+    },
+    {
+      path: "/test",
+      name: "test",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "/",
+          name: "test",
+          component: TestMain
+        },
+        {
+          path: "esgtest",
+          name: "ESGTest",
+          component: ESGTestDo
+        },
+        {
+          path: "risktest",
+          name: "RiskTest",
+          component: RiskTestDo
+        }
+      ]
+    },
+    {
+      path: "/stock",
+      name: "stock",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "mygroup",
+          name: "mygroup",
+          component: myGroup
+        },
+        {
+          path: "index",
+          name: "IndexStock",
+          component: IndexStock
+        },
+        {
+          path: "all",
+          name: "stockFrom",
+          component: StockLIst
+        },
+        {
+          path: "detail",
+          name: "stockChart",
+          component: StockChart
+        }
+      ]
+    },
+    {
+      path: "/community",
+      name: "community",
+      component: PostHeader
+    }
+  ]
+})
 
-const router = new VueRouter({
-  mode: "hash",
-  base: process.env.BASE_URL,
-  routes
-});
+export default router
+
+// const router = new VueRouter({
+//   mode: "hash",
+//   base: process.env.BASE_URL,
+//   routes
+// });
 //TODO
 
 // router.beforeEach((to, from, next) => {
@@ -139,4 +236,4 @@ const router = new VueRouter({
 //   }
 // });
 
-export default router;
+

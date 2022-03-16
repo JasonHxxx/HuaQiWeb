@@ -68,6 +68,7 @@ export default {
     };
   },
   methods: {
+
     loadData() {
       let tem;
       let n = this.esgList.length;
