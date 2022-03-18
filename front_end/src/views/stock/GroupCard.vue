@@ -78,19 +78,19 @@ export default {
   },
   mounted() {
     const combo1 = {
-      code: "111111",
-      name: "xxxxx",
-      price: "123.456"
+      code: "GLD",
+      name: "格林",
+      price: "10.89"
     };
     const combo2 = {
-      code: "222222",
-      name: "yyy",
-      price: "123.456"
+      code: "DXLT",
+      name: "东旭蓝",
+      price: "3.18"
     };
     const combo3 = {
-      code: "333333",
-      name: "zz",
-      price: "123.456"
+      code: "FCHB",
+      name: "富春环",
+      price: "5.61"
     };
     this.editableTabs[0].comboData.push(combo1);
     this.editableTabs[0].comboData.push(combo2);

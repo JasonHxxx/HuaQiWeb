@@ -61,6 +61,7 @@
       </v-data-table>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -153,6 +154,9 @@ export default {
       } else {
         return "green";
       }
+    },
+    recommend(){
+
     }
   }
 };

@@ -50,7 +50,7 @@ export default {
       },
       {
         label: "金融组",
-        member: [{ name: "小明", pic: "logo.png" }]
+        member: [{ name: "小明", pic: "1.1.jpg" }]
       },
       {
         label: "机器学习组",

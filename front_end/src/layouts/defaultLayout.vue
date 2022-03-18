@@ -14,6 +14,9 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn text color="#424242" @click="direct('/test')">
+        问卷
+      </v-btn>
       <v-btn text color="#424242" @click="direct('/community')">
         社区
       </v-btn>
