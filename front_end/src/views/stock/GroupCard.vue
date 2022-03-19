@@ -94,19 +94,19 @@ export default {
       tabIndex: 1,
       recommendData: [
         [
-          { name: "hhh", data: "1.53%", code: "123411" },
-          { name: "hhh", data: "1.23%", code: "12346" },
-          { name: "hhh", data: "2s.7%", code: "12335" }
+          { name: "美年健", data: "1.53%", code: "MNJK" },
+          { name: "阿尔特", data: "0.42%", code: "AET" },
+          { name: "美盈", data: "1.31%", code: "MYS" }
         ],
         [
-          { name: "hhh", data: "1.53%", code: "123411" },
-          { name: "hhh", data: "1.23%", code: "12346" },
-          { name: "hhh", data: "2s.7%", code: "12335" }
+          { name: "海特高新", data: "0.09%", code: "HTGX" },
+          { name: "凯莱", data: "1.23%", code: "KLY" },
+          { name: "蓝帆医疗", data: "1.9%", code: "LFYL" }
         ],
         [
-          { name: "h", data: "1.53%", code: "123411" },
-          { name: "hhh", data: "1.23%", code: "12346" },
-          { name: "hhhh", data: "2s.7%", code: "12335" }
+          { name: "莱茵生物", data: "1.49%", code: "LYSW" },
+          { name: "瀛通通讯", data: "2.37%", code: "YTTX" },
+          { name: "华源控股", data: "0.08%", code: "HYKG" }
         ],
       ]
     };

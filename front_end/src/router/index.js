@@ -6,6 +6,7 @@ import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
 import Home from "@/views/Home.vue";
 import Esg from "@/views/Esg";
+import UnLoginLayout from "../layouts/unlogined";
 
 import PostHeader from "@/views/PostHeader";
 import EsgRe from "@/views/EsgRe";
@@ -37,12 +38,12 @@ let router = new VueRouter({
   routes:[
     {
       path: "/",
-      name: "Home",
-      component: DefaultLayout,
+      name: "visitorHome",
+      component: UnLoginLayout,
       children: [
         {
           path: "/",
-          name: "home",
+          name: "visitorhome",
           component: Home
         },
         {
@@ -54,6 +55,18 @@ let router = new VueRouter({
           path: "register",
           name: "Register",
           component: Register
+        }
+      ]
+    },
+    {
+      path: "/home",
+      name: "Home",
+      component: DefaultLayout,
+      children: [
+        {
+          path: "/home",
+          name: "home",
+          component: Home
         }
       ]
     },

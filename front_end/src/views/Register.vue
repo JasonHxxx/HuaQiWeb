@@ -54,7 +54,7 @@
 </template>
 
 <script>
-import { register } from "@/api/user";
+// import { register } from "@/api/user";
 
 export default {
   name: "Register",
@@ -72,33 +72,43 @@ export default {
   },
   methods: {
     handleRegister() {
-      register({
-        uname: this.username,
-        phone: this.phone,
-        password: this.password,
-        picture: null,
-        userRole: this.userRole.toUpperCase()
-      }).then(res => {
-        console.log(res);
-        if (res.code === 1) {
-          window.localStorage.setItem("userPhone", this.phone);
-          window.localStorage.setItem("userPassword", this.password);
-          this.username = res.data.uname;
-          this.showSuccessDialog = true;
-          setTimeout(() => {
-            this.showSuccessDialog = false;
-          }, 1000);
-          setTimeout(() => {
-            this.$router.push("/login");
-          }, 1000);
-        } else {
-          this.msg = res.msg;
-          this.showFailDialog = true;
-          setTimeout(() => {
-            this.showFailDialog = false;
-          }, 1000);
-        }
-      });
+      window.localStorage.setItem("userPhone", this.phone);
+      window.localStorage.setItem("userPassword", this.password);
+      // this.username = res.data.uname;
+      this.showSuccessDialog = true;
+      setTimeout(() => {
+        this.showSuccessDialog = false;
+      }, 1000);
+      setTimeout(() => {
+        this.$router.push("/login");
+      }, 1000);
+      // register({
+      //   uname: this.username,
+      //   phone: this.phone,
+      //   password: this.password,
+      //   picture: null,
+      //   userRole: this.userRole.toUpperCase()
+      // }).then(res => {
+      //   console.log(res);
+      //   if (res.code === 1) {
+      //     window.localStorage.setItem("userPhone", this.phone);
+      //     window.localStorage.setItem("userPassword", this.password);
+      //     this.username = res.data.uname;
+      //     this.showSuccessDialog = true;
+      //     setTimeout(() => {
+      //       this.showSuccessDialog = false;
+      //     }, 1000);
+      //     setTimeout(() => {
+      //       this.$router.push("/login");
+      //     }, 1000);
+      //   } else {
+      //     this.msg = res.msg;
+      //     this.showFailDialog = true;
+      //     setTimeout(() => {
+      //       this.showFailDialog = false;
+      //     }, 1000);
+      //   }
+      // });
     }
   }
 };

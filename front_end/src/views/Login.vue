@@ -69,6 +69,13 @@ export default {
   },
   methods: {
     handleLogin() {
+      this.showSuccessDialog = true;
+      setTimeout(() => {
+        this.showSuccessDialog = false;
+      }, 1000);
+      setTimeout(() => {
+        this.$router.push("/home");
+      }, 800);
       login({phone: this.phone, password: this.password}).then(res => {
         if (res.code === 1) {
           window.localStorage.setItem("userId", res.data.id);

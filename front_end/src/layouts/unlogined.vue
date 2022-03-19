@@ -10,7 +10,7 @@
         ></v-img>
       </v-app-bar-nav-icon>
 
-<!--      <v-app-bar-title  @click="direct('/')" c class="cursor">ESG</v-app-bar-title>-->
+      <!--      <v-app-bar-title  @click="direct('/')" c class="cursor">ESG</v-app-bar-title>-->
 
       <v-spacer></v-spacer>
 
@@ -20,8 +20,8 @@
       <v-btn text color="#424242" @click="direct('/community')">
         社区
       </v-btn>
-      <v-btn text color="#424242" @click="direct('/')">
-        我的信息
+      <v-btn text color="#424242" @click="direct('/login')">
+        登录/注册
       </v-btn>
     </v-app-bar>
     <router-view />
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "DefaultLayout",
+  name: "UnLoginLayout",
   data() {
     return {};
   },

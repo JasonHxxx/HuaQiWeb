@@ -46,20 +46,63 @@ export default {
     team: [
       {
         label: "指导老师",
-        member: [{ name: "小明", pic: "logo.png" }]
+        member: [{ name: "杨学伟", pic: "0.1.jpg" }]
       },
       {
-        label: "金融组",
-        member: [{ name: "小明", pic: "1.1.jpg" }]
+        label: "组长",
+        member: [{ name: "沈桓宇", pic: "2.22.jpg" }]
+      },
+      {
+        label: "商业组",
+        member: [{ name: "黄美鑫", pic: "1.1.jpg" },
+          { name: "郭昭芃", pic: "2.1.jpg" },
+          { name: "严舒廷", pic: "2.2.jpg" },
+          { name: "郑海龙", pic: "2.3.jpg" },
+          { name: "陆心仪", pic: "1.2.jpg" },
+          { name: "陆晗宇", pic: "2.4.jpg" },
+          { name: "王晨旭", pic: "1.3.jpg" },
+          { name: "姜婧雯", pic: "1.4.jpg" }
+        ]
       },
       {
         label: "机器学习组",
-        member: [{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" },{ name: "小明", pic: "mountain.jpeg" }]
+        member: [{ name: "赵思衡", pic: "2.5.jpg" },
+          { name: "方盛俊", pic: "2.6.jpg" },
+          { name: "王科", pic: "2.7.jpg" },
+          { name: "徐一珩", pic: "2.8.jpg" },
+          { name: "林滋芊", pic: "1.5.jpg" },
+          { name: "陈程", pic: "2.9.jpg" }
+        ]
       },
       {
-        label: "开发组",
-        member: [{ name: "小明", pic: "logo.png" }]
-      }
+        label: "文本挖掘组",
+        member: [{ name: "侯万方", pic: "2.10.jpg" },
+          { name: "顾玮婧", pic: "1.6.jpg" },
+          { name: "孙思涵", pic: "1.8.jpg" }
+        ]
+      },
+      {
+        label: "投资策略组",
+        member: [{ name: "符朕皓", pic: "2.11.jpg" },
+          { name: "方振宇", pic: "2.12.jpg" }
+        ]
+      },
+      {
+        label: "前端",
+        member: [{ name: "胡越", pic: "2.19.jpg" },
+          { name: "许礼孟", pic: "2.21.jpg" },
+          { name: "王涛", pic: "2.14.jpg" }
+        ]
+      },
+      {
+        label: "后端",
+        member: [
+          { name: "孟剑卫", pic: "2.15.jpg" },
+          { name: "郭子坤", pic: "2.16.jpg" },
+          { name: "夏宇", pic: "2.17.jpg" },
+          { name: "喻磊", pic: "2.18.jpg" }
+        ]
+      },
     ],
     pictrueList: [],
     links: [

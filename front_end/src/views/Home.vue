@@ -101,7 +101,7 @@ export default {
             "By understanding your investment preferences, we will recommend different portfolios to you, which you can consider as a reference.",
           pic:
             "https://img1.baidu.com/it/u=3726131626,3339493601&fm=253&fmt=auto&app=138&f=JPEG?w=887&h=500",
-          path: "/test"
+          path: "/stock/group"
         },
         {
           title: "Market index",
