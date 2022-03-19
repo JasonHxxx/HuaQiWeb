@@ -14,6 +14,12 @@
         {{kind}}
       </v-icon>
       <span class="title font-weight-light">{{kindDes}}</span>
+      <v-spacer></v-spacer>
+      <v-icon
+          right
+      >
+        {{ rate }}分
+      </v-icon>
     </v-card-title>
 
     <v-card-text class="headline font-weight-bold">
@@ -30,6 +36,10 @@ export default {
     description: {
       type: String,
       default: "简介"
+    },
+    rate: {
+      type: [String,Number],
+      default: "暂未评"
     },
     kind: {
       type: String,

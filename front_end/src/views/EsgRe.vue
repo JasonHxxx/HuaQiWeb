@@ -1,8 +1,19 @@
 <template>
   <div style="width: 90%;" class="d-flex flex-column mx-auto">
-    <div class="mt-6 end d-flex justify-end">
-      <el-input placeholder="请输入内容" v-model="search" style="width: 200px;">
-        <el-button slot="append" icon="el-icon-search"></el-button>
+    <div class="mt-6 d-flex align-baseline">
+      <h3 v-if="choose">{{ name }}</h3>
+      <h3 v-else>{{ name_msg }}</h3>
+      <v-spacer></v-spacer>
+      <el-input
+        placeholder="您想查询的公司"
+        v-model="search"
+        style="width: 200px;"
+      >
+        <el-button
+          slot="append"
+          icon="el-icon-search"
+          @click="changeData"
+        ></el-button>
       </el-input>
     </div>
     <div class="mt-6 d-flex justify-space-between">
@@ -13,6 +24,7 @@
         :kind="info.kind"
         :card-color="color_list[i]"
         :kind-des="info.kindDes"
+        :rate="info.rate"
       >
       </EsgReItem>
     </div>
@@ -20,13 +32,23 @@
 </template>
 
 <script>
-import EsgReItem from "../components/EsgReItem";
+import EsgReItem from "@/components/EsgReItem";
 export default {
   name: "EsgRe",
   components: { EsgReItem },
   data() {
     return {
-      search:"",
+      search: "",
+      choose: false,
+      name_msg: "请先选择一家公司",
+      rateData: [
+        [4.1, 4.2, 3.8],
+        [3.1, 4.2, 3.8],
+        [2.1, 3.4, 4.2],
+        [4.1, 2.2, 3.4],
+        [3.1, 3.2, 2.6],
+        [2.1, 4.2, 3.8]
+      ],
       descriptions: [
         [
           "企业在生产经营中的环境绩效较高，在生产过程中能够系统地管理和控制各类污染物的排放，对废物的处理也达到最优标准。此外，企业具备较好的节能创新能力，在绿色研发上的投入较多。",
@@ -44,35 +66,43 @@ export default {
           "企业在公司治理方面表现不佳。董事会和管理层的组织架构有较大改善空间。公司由于缺乏科学完善的管理机制，在应对治理异常时的处理能力较弱。此外，公司在信息披露方面有待加强，急需提升社会责任报告的可靠性以及发布的及时性。"
         ]
       ],
-      color_list: ["#43A047", "#FFA000",  "#26c6da"],
+      color_list: ["#43A047", "#FFA000", "#26c6da"],
       esgList: [
         {
           kind: "E",
           kindDes: "nvironmental",
           description: "",
-          rate: 2
+          rate: ""
         },
         {
           kind: "S",
           kindDes: "ocial",
           description: "",
-          rate: 3
+          rate: ""
         },
         {
           kind: "G",
           kindDes: "overnance",
           description: "",
-          rate: 4
+          rate: ""
         }
       ]
     };
   },
   methods: {
-
+    changeData() {
+      this.choose = true;
+      this.name = this.search;
+      let a = Math.floor(Math.random() * 6);
+      for (let i = 0; i < 3; i++) {
+        this.esgList[i].rate = this.rateData[a][i];
+      }
+      this.loadData();
+    },
     loadData() {
       let tem;
       let n = this.esgList.length;
-      for (let i = 0; i < n; i++ ) {
+      for (let i = 0; i < n; i++) {
         tem = this.esgList[i].rate;
         if (tem > 4) {
           this.esgList[i].description = this.descriptions[i][0];
@@ -82,17 +112,13 @@ export default {
           this.esgList[i].description = this.descriptions[i][2];
         }
       }
-      console.log(this.esgList);
     }
   },
-  mounted() {
-    this.loadData();
-  }
+  mounted() {}
 };
 </script>
 
 <style scoped>
 .end {
-
 }
 </style>
